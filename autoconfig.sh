@@ -4,6 +4,9 @@ echo "Enabling Flathub repository due to having more up-to-date packages"
 # Enable flathub repository
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+# Remove Fedora flatpak repo
+flatpak remote-delete fedora -y
+
 # Run installer
 echo "Installing terminal tools"
 source install/terminal/terminal-tools.sh
@@ -12,9 +15,6 @@ echo "Installing desktop apps"
 for installer in install/desktop/*; do
   source $installer
 done
-
-echo "Installing Sway TWM"
-source install/sway-twm/dm-sway.sh
 
 # Run configuration
 echo "Running configuration scripts"
