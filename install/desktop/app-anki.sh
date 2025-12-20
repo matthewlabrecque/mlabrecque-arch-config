@@ -1,3 +1,3 @@
 #!/bin/bash
 
-flatpak install -y flathub net.ankiweb.Anki
+flatpak install -y net.ankiweb.Anki

@@ -1,17 +1,14 @@
-# Fedora Atomic Autoconfig Setup
-A auto-configuration utility used to create an opinionated system designed for development applications, built off Fedora Atomic
+# Arch Linux Autoconfig Setup
+A auto-configuration utility used to create an opinionated system designed for development applications, built off vanilla Arch Linux.
 
 ## Installation
 To run the utility, do the following
 ```sh
-git clone https://codeberg.org/mhlab/autoconfig.git ~/Downloads/FedoraAtomicAutoconfig
-cd ~/Downloads/FedoraAtomicAutoconfig
+git clone https://codeberg.org/mhlab/arch-autoconfig.git ~/Downloads/ArchAutoconfig
+cd ~/Downloads/ArchAutoconfig
 ./auto-config.sh
 ```
 ## Notes
-This autoconfig script is designed for Fedora Atomic systems. Fedora Atomic is variant of Fedora that uses an immutable root filesystem (read-only) and manages applications primarily via containerization technologies like Docker or Podman, and atomic updates for enhanced stability and security.
-
-I prioritize stability above all else in my systems, meaning all development on my system is done through Toolbox containers, if I blow something up in a container, I can just wipe the container without losing any important features/files.
-
+This script is designed for Arch Linux systems running KDE. While I expect this system to work just fine on other desktop environments (such as GNOME) several pieces of software installed by this script are made by the KDE Project, so I would highly recommend looking through the app files to see if there's anything you do not want installed on this system.
 ## Who is this script best for?
-If you are someone who primarily does software engineering and wants a system just for that, this setup will be your best friend. This script isn't designed for you Arch weirdos, it's designed to just get something working.
+If you are a developer who wants the latest apps/tools provided by a powerful package manager such as Arch, without the headache of manually installing/configuring a Arch system, then this script is perfect for you.

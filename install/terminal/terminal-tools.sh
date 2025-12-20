@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# Some might question the use of only one file for installing all terminal tools,
-# this was done intentionally due to how atomic installations work
+# The terminal tools shell file contains commonly used tools in the terminal that aren't directly used for development
 
-# Install terminal tools
-rpm-ostree refresh-md
-sudo rpm-ostree install -y zsh git gh vim neovim
+# Neovim
+sudo pacman -S --noconfirm nvim
+
+# Yay package installer
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si -y
+
+# Ghostty Terminal
+sudo pacman -S --noconfirm ghostty

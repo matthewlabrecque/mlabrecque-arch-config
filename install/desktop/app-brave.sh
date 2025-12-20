@@ -1,3 +1,3 @@
 #!/bin/bash
 
-flatpak install -y flathub com.brave.Browser
+flatpak install -y com.brave.Browser

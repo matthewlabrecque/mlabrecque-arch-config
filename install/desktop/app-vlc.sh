@@ -1,3 +1,3 @@
 #!/bin/bash
 
-flatpak install -y flathub org.videolan.VLC
+sudo pacman -S --noconfirm vlc

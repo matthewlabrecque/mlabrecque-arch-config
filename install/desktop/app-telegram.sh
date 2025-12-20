@@ -1,3 +1,3 @@
 #!/bin/bash
 
-flatpak install -y flathub org.telegram.desktop
+flatpak install -y org.telegram.desktop
