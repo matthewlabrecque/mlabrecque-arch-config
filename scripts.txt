@@ -1,5 +1,0 @@
-# Run configuration
-echo "Running configuration scripts"
-for config in config/*; do
-  source $config
-done
