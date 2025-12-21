@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Install UFW
-sudo pacman -S --noconfirm ufw
-
 # Configure UFW
 sudo systemctl enable ufw
 sudo systemctl start ufw

@@ -20,7 +20,9 @@ else
   echo "Arch with KDE detected. Proceeding with installation."
 fi
 
-echo "Enabling Flathub repository due to having more up-to-date packages"
+sleep 5
+
+echo "Enabling Flatpak"
 
 # Enable flathub repository
 sudo pacman -S --noconfirm flatpak
