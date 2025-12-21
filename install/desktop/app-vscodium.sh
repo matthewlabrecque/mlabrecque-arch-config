@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -Sy vscodium-bin
+yay -S --noconfirm vscodium-bin

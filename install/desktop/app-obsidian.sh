@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -Sy md.obsidian.Obsidian
+flatpak install -y md.obsidian.Obsidian
