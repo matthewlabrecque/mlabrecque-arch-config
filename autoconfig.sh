@@ -9,10 +9,10 @@ fi
 
 # Determine if KDE or GNOME is installed
 # If neither are installed, abort installation
-if [ "$XDG_CURRENT_DESKTOP" == "GNOME"]; then
+if [ "${XDG_CURRENT_DESKTOP:-}" == "GNOME" ]; then
   echo "GNOME desktop environment detected. Installing GNOME-specific packages."
   source install/desktop-environment/de-gnome.sh
-elif [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
+elif [ "${XDG_CURRENT_DESKTOP:-}" == "KDE" ]; then
   echo "KDE desktop environment detected. Installing KDE-specific packages"
   source install/desktop-environment/de-kde.sh
 else
@@ -35,7 +35,7 @@ source install/terminal/terminal-tools.sh
 
 # Install dev tools/toolchains
 echo "Installing dev tools"
-source install/termina/dev-tools.sh
+source install/terminal/dev-tools.sh
 
 # Install services such as UFW and AppArmor
 echo "Installing core services"
@@ -53,4 +53,4 @@ for i in {5..1}; do
   echo "Rebooting system in $i seconds!"
   sleep 1
 done
-systemctl reboot
+systemctl reboot

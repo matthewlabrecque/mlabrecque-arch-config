@@ -3,25 +3,30 @@
 # Switch the default terminal to zsh
 chsh -s $(which zsh)
 
-# Add starshp to terminal
-curl -sS https://starship.rs/install.sh | sh
+# Add starship to terminal
+sudo pacman -S --noconfirm starship
 
 # Append Ghostty configuration with addition parameters
-echo '#Shell configuration\n
-command = /bin/bash\n
-\n
-#Font configuration\n
-font-family = "FiraCode Nerd Font Mono\n
-font-size = 12\n
-maximize = true\n
-theme = Atom One Dark' >>~/.config/ghostty/config
+mkdir -p ~/.config/ghostty
+cat <<EOF >> ~/.config/ghostty/config
+#Shell configuration
+command = $(which zsh)
+
+#Font configuration
+font-family = "FiraCode Nerd Font Mono"
+font-size = 12
+maximize = true
+theme = Atom One Dark
+EOF
 
 # Append .zshrc file with additional parameters
-echo '# Enable starship\n
-eval "$(starship init zsh)"\n
-\n
-# Custom aliases\n
-alias ll="ls -lF"\n
-alias autoremove-check="sudo pacman -Rsp $(pacman -Qdtq)"\n
-alias autoremove="sudo pacman -Rs $(pacman -Qdtq)"\n
-alias n="nvim ."' >>~/.zshrc
+cat <<EOF >> ~/.zshrc
+# Enable starship
+eval "\$(starship init zsh)"
+
+# Custom aliases
+alias ll="ls -lF"
+alias autoremove-check="sudo pacman -Rsp \$(pacman -Qdtq)"
+alias autoremove="sudo pacman -Rs \$(pacman -Qdtq)"
+alias n="nvim ."
+EOF
