@@ -9,7 +9,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Add starship to terminal
 sudo pacman -S --noconfirm starship
 
-# Append Ghostty configuration with addition parameters
+# Append Ghostty configuration with additional parameters
 mkdir -p ~/.config/ghostty
 cat <<EOF >>~/.config/ghostty/config
 #Shell configuration
@@ -24,6 +24,10 @@ EOF
 
 # Append .zshrc file with additional parameters
 cat <<EOF >>~/.zshrc
+# Add JAVA to the home directory path
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
+export PATH="$JAVA_HOME/bin:$PATH"
+
 # Enable starship
 eval "\$(starship init zsh)"
 
@@ -33,3 +37,5 @@ alias autoremove-check="sudo pacman -Rsp \$(pacman -Qdtq)"
 alias autoremove="sudo pacman -Rs \$(pacman -Qdtq)"
 alias n="nvim ."
 EOF
+
+source ~/.zshrc
