@@ -2,10 +2,15 @@
 # The terminal tools shell file contains commonly used tools in the terminal that aren't directly used for development
 
 # Yay package installer
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si -y
+if [ ! command -v yay &>/dev/null]; then
+  cd /tmp
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si --noconfirm
+  cd
+else
+  echo "Yay AUR helper is already installed, skipping installation"
+fi
 
 # Ghostty Terminal
 sudo pacman -S --noconfirm ghostty

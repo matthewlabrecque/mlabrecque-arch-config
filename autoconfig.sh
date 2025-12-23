@@ -11,10 +11,10 @@ fi
 # If neither are installed, abort installation
 if [ "${XDG_CURRENT_DESKTOP:-}" == "GNOME" ]; then
   echo "GNOME desktop environment detected. Installing GNOME-specific packages."
-  source install/desktop-environment/de-gnome.sh
+  source install/desktop/de-gnome.sh
 elif [ "${XDG_CURRENT_DESKTOP:-}" == "KDE" ]; then
   echo "KDE desktop environment detected. Installing KDE-specific packages"
-  source install/desktop-environment/de-kde.sh
+  source install/desktop/de-kde.sh
 else
   echo "FATAL ERROR: No desktop environment is installed. Please install one to continue with installation."
   exit 1
@@ -45,7 +45,7 @@ done
 
 # Install non-DE specific applications
 echo "Installing desktop apps"
-for installer in install/desktop/*; do
+for installer in install/app/*; do
   source $installer
 done
 
