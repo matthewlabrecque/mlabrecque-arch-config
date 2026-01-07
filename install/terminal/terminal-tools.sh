@@ -11,12 +11,3 @@ if [ ! command -v yay &>/dev/null]; then
 else
   echo "Yay AUR helper is already installed, skipping installation"
 fi
-
-# Ghostty Terminal
-sudo pacman -S --noconfirm ghostty
-
-# Neovim
-sudo pacman -S --noconfirm nvim
-
-# Rsync
-sudo pacman -S --noconfirm rsync
