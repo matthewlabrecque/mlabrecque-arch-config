@@ -1,12 +1,12 @@
 # mlabrecque Arch Autoconfig Utility
 
 ## Overview
-My custom script which turns a minimal Arch Linux installation into a fully featured environment designed for my specific workflow and preferences as a Computer Science and Math student at university.
+A custom script which turns a minimal Arch Linux installation into a fully featured environment designed for my specific workflow and preferences as a Computer Science and Math student at university.
 
 ## Philosophy
 In the spirit of Arch Linux's core philosophy of keeping things minimal as possible, I have striven for simplicity/minimalism and designed my script to hit the sweet spot of delivering a secure and stable system, while also not sacrificing anything in terms of my workflow or ease of use. This philosophy did make for intentional decisions in what programs I use and don't use in my workflows, as some might notice my intentional snub of a more "conventional" IDE or text editor (such as VSCode or JetBrains) in place of using Neovim. The truth is if I feel like a program gets in my way, then there's a better option out there and it felt like VSC/IntelliJ were doing more to get in my way than help me, which prompted the exclusion from my system.
 
-Currently to do a full build of Arch using this script requires a total of 808 packages (775 from pacman, 33 from Flatpak). In comparison to a conventional setup with KDE or GNOME where that number is closer to between 900 and 1,100 packages. However, as you will see this minimalism doesn't lose anything when it comes to features.
+Currently to do a full build of Arch using this script requires a total of 808 packages (775 from pacman, 33 from Flatpak), compared to GNOME coming in at 900 packages or KDE clocking in with over 1,100 packages. However, this desire for minimalism doesn't sacrifice when it comes to features.
 
 ## Features
 - Sets up and configures **COSMIC** as the default desktop envrionment
