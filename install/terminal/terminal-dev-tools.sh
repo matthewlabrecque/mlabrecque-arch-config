@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # This file contains commonly used libraries for common dev environments
 

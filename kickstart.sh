@@ -19,12 +19,16 @@ if [ ! -f /etc/arch-release ]; then
   exit 1
 fi
 
+# Enable nullglob to prevent loops from running with literal glob strings if directories are empty
+shopt -s nullglob
+
 # Determine the script's directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Enable flathub repository
 echo "Enabling Flatpak"
 sudo pacman -S --noconfirm flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Update the system before continuing
 sudo pacman -Syu --noconfirm

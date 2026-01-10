@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # The terminal tools shell file contains commonly used tools in the terminal that aren't directly used for development
 
 # Yay package installer

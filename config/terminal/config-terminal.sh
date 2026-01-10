@@ -1,10 +1,11 @@
 #!/bin/bash
+set -e
 
 # Switch the default terminal to zsh
-chsh -s "$(which zsh)"
+sudo usermod -s "$(which zsh)" "$USER"
 
 # Add oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Add starship to terminal
 sudo pacman -S --noconfirm starship
@@ -12,7 +13,7 @@ sudo pacman -S --noconfirm starship
 # Append .zshrc file with additional parameters
 cat <<EOF >>~/.zshrc
 # Add JAVA to the home directory path
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
+export JAVA_HOME="/usr/lib/jvm/default"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # Enable starship
@@ -25,4 +26,3 @@ alias autoremove="sudo pacman -Rs \$(pacman -Qdtq)"
 alias n="nvim ."
 EOF
 
-source ~/.zshrc

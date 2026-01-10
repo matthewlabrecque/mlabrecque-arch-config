@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Configure UFW
 sudo systemctl enable ufw

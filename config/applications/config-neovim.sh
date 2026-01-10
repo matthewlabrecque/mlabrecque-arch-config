@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Install LazyVim
 if [ -d ~/.config/nvim ]; then
